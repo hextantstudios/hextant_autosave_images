@@ -1,0 +1,16 @@
+# Windows
+Thumbs.db
+Thumbs.db.meta
+
+# MacOS
+*.DS_Store
+
+# VS / VS Code
+.vs
+.vscode
+
+# Blender backups
+*.blend[1-9]
+
+# Python cache files (Krita plugin backups.)
+__pycache__
