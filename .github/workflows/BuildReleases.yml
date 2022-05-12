@@ -32,12 +32,12 @@ jobs:
             ${{ github.event.repository.name }}.zip
 
       # https://github.com/marvinpinto/action-automatic-releases
-      # Create/update a new "recent" release with the built zip file.
+      # Create/update a new "latest" release with the built zip file.
       - uses: "marvinpinto/action-automatic-releases@latest"    
         with:
           title: "Latest Commits"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "recent"
+          automatic_release_tag: "latest"
           # So that it will show in GitHub's Code page (right-side).
           prerelease: false
           files: |
