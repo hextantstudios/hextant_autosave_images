@@ -35,7 +35,7 @@ jobs:
       # Create/update a new "latest" release with the built zip file.
       - uses: "marvinpinto/action-automatic-releases@latest"    
         with:
-          title: "Latest Commits"
+          title: "Latest Changes"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           # So that it will show in GitHub's Code page (right-side).
