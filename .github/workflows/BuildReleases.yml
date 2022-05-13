@@ -25,11 +25,12 @@ jobs:
         
         # To zip the contents of the repository with the repository name as the parent
         # directory (required for Blender Add-ons):
+        # Zip like above to get desired files, then unzip into a sub-directory and rezip.
         run: |
-          shopt -s dotglob
+          zip -r __temp.zip . -x ".git*"
           mkdir ${{ github.event.repository.name }}
-          mv !(${{ github.event.repository.name }}) ${{ github.event.repository.name }}
-          zip -r ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }} -x ".git*"
+          unzip __temp.zip -d ${{ github.event.repository.name }}
+          zip -r ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}
       
       # Create a new "vX.Y.Z" release with the build zip file.
       - uses: "marvinpinto/action-automatic-releases@latest"
