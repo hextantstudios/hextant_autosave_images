@@ -20,7 +20,16 @@ jobs:
 
       # Create a zip of the repository.
       - name: Zip Repository (excluding .git*)
-        run: zip -r ${{ github.event.repository.name }}.zip ../${{ github.event.repository.name }} -x ".git*"
+        # To zip the contents of the repository with-out the repository name in the zip:
+        # run: zip -r ${{ github.event.repository.name }}.zip . -x ".git*"
+        
+        # To zip the contents of the repository with the repository name as the parent
+        # directory (required for Blender Add-ons):
+        run: |
+          shopt -s dotglob
+          mkdir ${{ github.event.repository.name }}
+          mv !(${{ github.event.repository.name }}) ${{ github.event.repository.name }}
+          zip -r ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }} -x ".git*"
       
       # Create a new "vX.Y.Z" release with the build zip file.
       - uses: "marvinpinto/action-automatic-releases@latest"
