@@ -20,7 +20,7 @@ jobs:
 
       # Create a zip of the repository.
       - name: Zip Repository (excluding .git*)
-        run: zip -r ${{ github.event.repository.name }}.zip . -x ".git*"
+        run: zip -r ${{ github.event.repository.name }}.zip ../${{ github.event.repository.name }} -x ".git*"
       
       # Create a new "vX.Y.Z" release with the build zip file.
       - uses: "marvinpinto/action-automatic-releases@latest"
