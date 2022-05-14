@@ -12,7 +12,7 @@ While this is unfortunate, I would much rather *not* lose my work than waste a l
 
 ## Installation
 
-* Download the latest release from [here](https://github.com/hextantstudios/hextant_autosave_images/releases/download/latest/hextant_autosave_images.zip) or clone it using *git* to your custom Blender `...\scripts\addons\` folder.
+* Download the latest release from [here](https://github.com/hextantstudios/hextant_autosave_images/releases/latest/download/hextant_autosave_images.zip) or clone it using *git* to your custom Blender `...\scripts\addons\` folder.
 * From Blender's Main Menu:
   * *Edit / Preferences*
   * Click the *Install* button and select the downloaded zip file.
